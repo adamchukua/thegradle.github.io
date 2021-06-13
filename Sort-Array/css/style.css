@@ -1,0 +1,152 @@
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@font-face {
+  font-family: eUkraineTitle;
+  src: url('../fonts/e-UkraineHead-Light.ttf');
+}
+
+@font-face {
+  font-family: eUkraine;
+  src: url('../fonts/e-Ukraine-Light.ttf');
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-size: 16px;
+  font-family: eUkraine;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1 0 auto;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 1140px;
+  padding: 0 40px;
+}
+
+.gradient {
+  background: linear-gradient(-45deg, #89DB33, #AA2B8E, #23a6d5);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+
+h1.title {
+  font-size: 52px;
+  font-family: eUkraineTitle;
+}
+
+h2.title {
+  font-size: 42px;
+  padding: 25px 0;
+  font-family: eUkraineTitle;
+}
+
+.main .title {
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+
+.main-textarea {
+  width: 100%;
+  height: 250px;
+  resize: none;
+  outline: none;
+  border: none;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 25px;
+  background-color: #fff;
+}
+
+.main-btn {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  outline: none;
+  border: 1px solid #000;
+  padding: 12px 45px;
+  color: #fff;
+  border-radius: 25px;
+  cursor: pointer;
+  background: transparent;
+  color: #000;
+}
+
+.main-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.about {
+  padding-bottom: 25px;
+}
+
+.codes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.codes-item:first-child {
+  margin-right: 60px;
+}
+
+.codes-item-name {
+  background: #ffff44;
+  padding: 3px 15px;
+}
+
+.codes-item-code {
+  background: #181818;
+  color: #fff;
+  padding: 15px;
+}
+
+.codes-item-code code {
+  font-family: monospace;
+}
+
+.codes-item-code pre {
+  margin: 0;
+}
+
+footer {
+  background: #181818;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 991px)  {
+  .codes-item {
+    margin-top: 20px;
+    width: 100%;
+    margin-right: 0!important;
+  }
+}
