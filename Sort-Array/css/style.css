@@ -109,14 +109,19 @@ h2.title {
 .codes {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.codes-item {
+  min-width: 40%;
 }
 
 .codes-item:first-child {
-  margin-right: 60px;
+  margin-right: 25px;
 }
 
 .codes-item-name {
-  background: #ffff44;
+  background: #D7F64D;
   padding: 3px 15px;
 }
 
@@ -132,6 +137,8 @@ h2.title {
 
 .codes-item-code pre {
   margin: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 
 footer {
@@ -143,10 +150,24 @@ footer {
   font-size: 12px;
 }
 
-@media only screen and (max-width: 991px)  {
+@media only screen and (max-width: 1110px)  {
   .codes-item {
-    margin-top: 20px;
     width: 100%;
-    margin-right: 0!important;
+  }
+
+  .codes-item:first-child {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 530px)  {
+  h1.title {
+    font-size: 46px;
+  }
+  
+  h2.title {
+    font-size: 34px;
+    padding: 20px 0;
   }
 }

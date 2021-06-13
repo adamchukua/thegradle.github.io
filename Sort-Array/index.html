@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Сортування масиву</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
   <div class="container">
@@ -12,8 +13,8 @@
       <div class="wrap">
         <div class="main">
           <h1 class="title">Сортування масиву</h1>
-          <textarea class="main-textarea">5 9 7 5 2 4 6 9 5 8 7 5 6 10</textarea>
-          <button class="main-btn">Сортувати</button>
+          <textarea class="main-textarea" id="numbers">5 9 7 5 2 4 6 9 5 8 7 5 6 10</textarea>
+          <button class="main-btn" id="sort">Сортувати</button>
         </div>
       </div>
     </div>
@@ -24,23 +25,41 @@
           <div class="codes-item">
             <p class="codes-item-name">HTML</p>
             <div class="codes-item-code">
-<pre><code>&lt;div class="main">
-  &lt;textarea class="main-textarea">&lt;&sol;textarea>
-  &lt;button class="main-btn">Сортувати&lt;&sol;button>
+<pre><code>&lt;div class="sort-example">
+  &lt;textarea id="numbers">&lt;&sol;textarea>
+  &lt;button id="sort">Submit&lt;&sol;button>
 &lt;&sol;div></code></pre>
             </div>
           </div>
           <div class="codes-item">
             <p class="codes-item-name">JS</p>
             <div class="codes-item-code">
-<pre><code>&lt;div class="main">
-  &lt;textarea class="main-textarea">&lt;&sol;textarea>
-  &lt;button class="main-btn">Сортувати&lt;&sol;button>
-&lt;&sol;div>
-&lt;div class="main">
-  &lt;textarea class="main-textarea">&lt;&sol;textarea>
-  &lt;button class="main-btn">Сортувати&lt;&sol;button>
-&lt;&sol;div></code></pre>
+<pre><code>document.getElementById("sort").addEventListener("click", Sort);
+function Sort()
+{
+  var numbers = document.getElementById("numbers").value;
+  numbers = numbers.split(" ").map(Number);
+  
+  for(var i = 0; i &lt; numbers.length; i++)
+  {
+    if(!isNaN(numbers[i]))
+    {
+      if(numbers[i] == " ")
+      {
+        numbers.splice(i, 1);
+      }
+    }
+    else
+    {
+      alert("Error!");
+      return;
+    }
+  }
+
+  numbers.sort(function(a, b){return b - a});
+  console.log(numbers.join(" "));
+  document.getElementById("numbers").value = numbers.join(" ");
+}</code></pre>
             </div>
           </div>
         </div>
