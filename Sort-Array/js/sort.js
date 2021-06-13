@@ -15,5 +15,5 @@ function Sort()
   }
 
   numbers.sort(function(a, b){return b - a});
-  document.getElementById("numbers").value = numbers.join(" ");
+  document.getElementById("numbers").value += "\n" + numbers.join(" ");
 }
