@@ -35,21 +35,16 @@
             <p class="codes-item-name">JS</p>
             <div class="codes-item-code">
 <pre><code>document.getElementById("sort").addEventListener("click", Sort);
+document.getElementById("sort").addEventListener("click", Sort);
+  
 function Sort()
 {
   var numbers = document.getElementById("numbers").value;
-  numbers = numbers.split(" ").map(Number);
+  numbers = numbers.split(" ").map(x=>+x);
   
   for(var i = 0; i &lt; numbers.length; i++)
   {
-    if(!isNaN(numbers[i]))
-    {
-      if(numbers[i] == " ")
-      {
-        numbers.splice(i, 1);
-      }
-    }
-    else
+    if(isNaN(numbers[i]))
     {
       alert("Error!");
       return;
@@ -57,7 +52,6 @@ function Sort()
   }
 
   numbers.sort(function(a, b){return b - a});
-  console.log(numbers.join(" "));
   document.getElementById("numbers").value = numbers.join(" ");
 }</code></pre>
             </div>
@@ -69,5 +63,6 @@ function Sort()
   <footer>
     Створено студентом ЧНУ ім.&nbsp;Петра Могили 1&nbsp;курсу факультету&nbsp;комп’ютерних наук спеціальності&nbsp;"ІПЗ" Адамчуком&nbsp;Іваном
   </footer>
+  <script src="js/sort.js"></script>
 </body>
 </html>
