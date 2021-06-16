@@ -21,6 +21,10 @@ html, body {
   font-size: 16px;
 }
 
+a:visited {
+  color: #000;
+}
+
 .container {
   flex: 1 0 auto;
 }
@@ -31,14 +35,90 @@ html, body {
   padding: 0 40px;
 }
 
+/* HEADER */
+
 .gradient {
   background: linear-gradient(-45deg, #89DB33, #AA2B8E, #23a6d5);
   background-size: 400% 400%;
   animation: gradient 30s ease infinite;
+  height: 100vh;
 }
 
+nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 25px;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links-item {
+  margin-right: 50px;
+}
+
+.nav-links-item a {
+  text-decoration: none;
+}
+
+.nav-links-item a:hover {
+  text-decoration: underline;
+}
+
+.nav-lang {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-lang-item a {
+  text-decoration: none;
+}
+
+.nav-lang-item:first-child {
+  margin-right: 10px;
+}
+
+.nav-lang-item_active a {
+  color: #fff;
+}
+
+header {
+  height: 90%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+header .title {
+  font-size: 72px;
+  font-weight: 500;
+  padding: 40px 0;
+  font-weight: bold;
+}
+
+header .subtitle {
+  font-size: 28px;
+}
+
+/* MAIN */
+
+.page {
+  padding-top: 30px;
+}
+
+h2.title {
+  font-size: 32px;
+  padding-bottom: 25px;
+}
+
+/* PROJECTS */
+
 .list {
-  margin: 30px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -56,11 +136,7 @@ html, body {
   opacity: 0.5;
 }
 
-h1.title {
-  font-size: 52px;
-  font-weight: 500;
-  padding: 40px 0;
-}
+/* FOOTER */
 
 footer {
   background: #181818;
