@@ -10,7 +10,8 @@
 	}
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -21,6 +22,7 @@ html, body {
   font-size: 16px;
 }
 
+a,
 a:visited {
   color: #000;
 }
@@ -52,37 +54,29 @@ nav {
   padding-top: 25px;
 }
 
-.nav-links {
-  display: flex;
-}
-
-.nav-links-item {
-  margin-right: 50px;
-}
-
-.nav-links-item a {
-  text-decoration: none;
-}
-
-.nav-links-item a:hover {
-  text-decoration: underline;
-}
-
-.nav-lang {
+.nav-list {
   display: flex;
   justify-content: flex-end;
 }
 
-.nav-lang-item a {
+.nav-links .nav-list-item {
+  margin-right: 50px;
+}
+
+.nav-list-item a {
   text-decoration: none;
 }
 
-.nav-lang-item:first-child {
-  margin-right: 10px;
+.nav-list-item a:hover {
+  text-decoration: underline;
 }
 
-.nav-lang-item_active a {
+.nav-list-item_active a {
   color: #fff;
+}
+
+.nav-lang .nav-list-item:first-child {
+  margin-right: 10px;
 }
 
 header {
@@ -99,6 +93,7 @@ header .title {
   font-weight: 500;
   padding: 40px 0;
   font-weight: bold;
+  letter-spacing: 3px;
 }
 
 header .subtitle {
@@ -116,23 +111,16 @@ h2.title {
   padding-bottom: 25px;
 }
 
+/* ABOUT */
+
 /* PROJECTS */
 
-.list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.list img {
+.projects-item img {
   width: 100%;
-  max-width: 550px;
-  margin-bottom: 15px;
-  margin-right: 15px;
-  border-radius: 15px;
+  margin-bottom: 30px;
 }
 
-.list img:hover {
+.projects-item img:hover {
   opacity: 0.5;
 }
 

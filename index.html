@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adamchuk Ivan</title>
+  <title>Адамчук Іван</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,40 +14,48 @@
     <div class="gradient">
       <div class="wrap">
         <nav>
-          <ul class="nav-links">
-            <li class="nav-links-item"><a href="#projects">Проєкти</a></li>
-            <li class="nav-links-item"><a href="#contacts">Контакти</a></li>
+          <ul class="nav-list nav-links">
+            <li class="nav-list-item"><a href="#about">Про мене</a></li>
+            <li class="nav-list-item"><a href="#projects">Проєкти</a></li>
           </ul>
-          <ul class="nav-lang">
-            <li class="nav-lang-item nav-lang-item_active"><a href="#">UA</a></li>
-            <li class="nav-lang-item"><a href="#">EN</a></li>
+          <ul class="nav-list nav-lang">
+            <li class="nav-list-item nav-list-item_active"><a href="#">UA</a></li>
+            <li class="nav-list-item"><a href="en/index.html">EN</a></li>
           </ul>
         </nav>
       </div>
       <header>
         <p class="subtitle">Web-розробник</p>
         <h1 class="title">Адамчук Іван</h1>
-        <p class="subtitle">Люблю градієнти</p>
+        <p class="subtitle">Люблю ґрадієнти</p>
       </header>
     </div>
     <div class="wrap">
       <main>
         <div class="page">
-          <h2 class="title" id="projects">Проєкти</h2>
-          <ul class="list">
-            <li><a href="projects/DiNapoli/index.html"><img src="img/DiNapoli.png" alt=""></a></li>
-            <li><a href="projects/Photographer/index.html"><img src="img/Photographer.png" alt=""></a></li>
-            <li><a href="projects/Sort-Array/index.html"><img src="img/Sort-Array.png" alt=""></a></li>
-          </ul>
+          <h2 class="title" id="about">Про мене</h2>
         </div>
         <div class="page">
-          <h2 class="title" id="contacts">Контакти</h2>
+          <h2 class="title" id="projects">Проєкти</h2>
+          <div class="bootstrap-wrapper">
+            <div class="row">
+              <div class="col-md-6 projects-item">
+                <a href="projects/DiNapoli/index.html"><img src="img/DiNapoli.png" alt=""></a>
+              </div>
+              <div class="col-md-6 projects-item">
+                <a href="projects/Photographer/index.html"><img src="img/Photographer.png" alt=""></a>
+              </div>
+              <div class="col-md-6 projects-item">
+                <a href="projects/Sort-Array/index.html"><img src="img/Sort-Array.png" alt=""></a>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>
   </div>
   <footer>
-    Адамчук Іван
+    Зроблено мною © thegradle
   </footer>
 </body>
 </html>
