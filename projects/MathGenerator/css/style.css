@@ -14,13 +14,28 @@ body {
   justify-content: center;
 }
 
-#main-text {
-  font-size: 192px;
+#title {
+  font-size: 25vh;
+}
+
+#math-box {
+  display: none;
+  width: 80%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.math-list_right {
+  text-align: right;
+}
+
+.math-list li {
+  font-size: 18vh;
 }
 
 #btn {
   background: transparent;
-  padding: 10px 40px;
+  padding: 10px 60px;
   border-radius: 25px;
   outline: none;
   border: 1px solid #000;

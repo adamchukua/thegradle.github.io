@@ -10,43 +10,21 @@
 </head>
 <body>
   <div class="wrap">
-    <p id="main-text">MathGenerator</p>
+    <p id="title">MathGenerator</p>
+    <div id="math-box">
+      <ul class="math-list">
+        <li id="math-1"></li>
+        <li id="math-2"></li>
+        <li id="math-3"></li>
+      </ul>
+      <ul class="math-list">
+        <li id="math-4"></li>
+        <li id="math-5"></li>
+        <li id="math-6"></li>
+      </ul>
+    </div>
     <button id="btn">Почати!</button>
   </div>
-  <script>
-    var text = document.getElementById("main-text");
-    var btn = document.getElementById("btn");
-    
-    btn.addEventListener("click", Start);
-
-    function getRandomInt(min, max) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-    }
-
-    function Start() {
-      btn.innerHTML = "Ще!";
-
-      var valid = false;
-      
-      while(!valid) {
-        var a = getRandomInt(0, 15);
-        var b = getRandomInt(0, 15);
-        var symbol = (getRandomInt(0, 2) == 1) ? "+" : "-";
-
-        if(symbol == "-") {
-          if(a - b > 0) {
-            valid = true;
-          }
-        }
-        else {
-          valid = true;
-        }
-      }
-
-      text.innerHTML = a + " " + symbol + " " + b;
-    }
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
