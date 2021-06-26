@@ -109,6 +109,7 @@ header .subtitle {
 h2.title {
   font-size: 32px;
   padding-bottom: 25px;
+  font-weight: 600;
 }
 
 /* ABOUT */
@@ -121,11 +122,27 @@ h2.title {
   padding-bottom: 10px;
 }
 
+.about-cv {
+  background: transparent;
+  padding: 13px 45px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 15px 0;
+}
+
+.about-cv:hover {
+  background: #000;
+  color: #fff;
+}
+
 /* PROJECTS */
 
 .projects-item img {
   width: 100%;
   margin-bottom: 30px;
+  border-radius: 15px;
 }
 
 .projects-item img:hover {
