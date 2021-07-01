@@ -112,6 +112,12 @@ h2.title {
   font-weight: 600;
 }
 
+h3.subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 17px;
+}
+
 /* ABOUT */
 
 .about-text {
@@ -173,14 +179,53 @@ h2.title {
 
 /* PROJECTS */
 
-.projects-item img {
+.projects-item-bgimg {
   width: 100%;
-  margin-bottom: 30px;
-  border-radius: 15px;
+  border-radius: 10px;
+  opacity: 0.5;
 }
 
-.projects-item img:hover {
-  opacity: 0.5;
+.projects-item-bgimg_color {
+  height: 100px;
+  background: #cfa0b6;
+  opacity: 1;
+}
+
+.projects-item-content {
+  background: #181818d4;
+  text-align: center;
+  height: 45%;
+  position: relative;
+  bottom: 45%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: -75px;
+}
+
+.projects-item-logo {
+  padding: 3%;
+  background-color: #fff;
+  border-radius: 51%;
+  position: relative;
+  bottom: 31%;
+  width: 84px;
+}
+
+.projects-item-text {
+  color: #fff;
+  font-size: 22px;
+  position: relative;
+  bottom: 20px;
+  display: block;
+  text-decoration: none;
+}
+
+.projects-item-text:hover {
+  text-decoration: underline;
+}
+
+.projects-item-text:visited {
+  color: #fff;
 }
 
 /* FOOTER */
