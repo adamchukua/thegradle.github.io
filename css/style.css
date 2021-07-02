@@ -179,6 +179,10 @@ h3.subtitle {
 
 /* PROJECTS */
 
+.projects-item {
+  margin-bottom: 10px;
+}
+
 .projects-item-bgimg {
   width: 100%;
   border-radius: 10px;
@@ -200,6 +204,10 @@ h3.subtitle {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   margin-bottom: -75px;
+}
+
+.projects-item-content_color {
+  margin-bottom: 0;
 }
 
 .projects-item-logo {
@@ -226,6 +234,11 @@ h3.subtitle {
 
 .projects-item-text:visited {
   color: #fff;
+}
+
+.projects-item-text_textonly {
+  position: relative;
+  bottom: -20%;
 }
 
 /* FOOTER */
