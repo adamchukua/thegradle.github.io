@@ -1,10 +1,19 @@
 document.getElementById("btn-search").addEventListener("click", Search);
+document.getElementById("cookie-check").addEventListener("click", CookieAgree);
 document.getElementById("input-search").addEventListener("keyup", function(event)
 {
   if (event.keyCode === 13)
   {
     event.preventDefault();
     document.getElementById("btn-search").click();
+  }
+});
+
+document.getElementById("input-search").addEventListener("input", function() {
+  if(this.value == "")
+  {
+    document.getElementById("btn-search").innerHTML = "Шукати";
+    document.getElementById("btn-search").style.background = "transparent";
   }
 });
 
@@ -22,20 +31,34 @@ function Search()
       {
         input_search.value = words[i][0] + " — " + words[i][1] + " — " + words[i][2];
         isFound = true;
+        document.getElementById("btn-search").innerHTML = "Знайдено!";
+        document.getElementById("btn-search").style.background = "rgb(113, 227, 139)";
       }
     }
 
     if(!isFound)
     {
-      input_search.value = "Не знайдено";
+      document.getElementById("btn-search").innerHTML = "Не знайдено!";
+      document.getElementById("btn-search").style.background = "#fd9393";
     }
   }
+}
+
+function CookieAgree()
+{
+  setCookie("cookie agree", true, 999999);
+  document.getElementById("cookie-warning").style.display = "none";
 }
 
 function GetWords()
 {
   RandomForms();
   GetMyWords();
+
+  if(getCookie("cookie agree"))
+  {
+    document.getElementById("cookie-warning").style.display = "none";
+  }
 }
 
 function getRandomInt(min, max) {
@@ -83,7 +106,7 @@ function GetMyWords()
 
   if(!isWords)
   {
-    document.getElementById("no-words").innerHTML = "Нещодавно ви не вчили слова";
+    document.getElementById("no-words").innerHTML = "Останнім часом ви не вчили слова";
     document.getElementById("btn-learn").innerHTML = "Вчити";
   }
 }
