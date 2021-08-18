@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memento — Список глаголів</title>
+  <title>Memento — Оберіть складність тестування</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -12,8 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon.png" type="image/png">
 </head>
-<body onload="GetWords()">
-  <div class="wrap">
+<body>
+  <div class="bootstrap-wrapper wrap">
     <header class="m-t">
       <div class="header-logo">
         <h1 class="header-logo--title"><a href="index.html">Memento</a></h1>
@@ -26,27 +26,19 @@
         <a href="test.html" class="nav--link">Тест (beta)</a>
       </nav>
     </header>
-    <div class="main m-t-60">
-      <h1 class="title">Список глаголів</h1>
-      <div class="main-item m-t">
-        <h2 class="title"><img src="img/emoji/smirking-face.png" alt=""> Глаголи з трьома однаковими формами</h2>
-        <ul class="list" id="simple-words"></ul>
-      </div>
-      <div class="main-item m-t">
-        <h2 class="title"><img src="img/emoji/slightly-smiling-face.png" alt=""> Глаголи з двома однаковими формами</h2>
-        <ul class="list" id="middle-words"></ul>
-      </div>
-      <div class="main-item m-t m-b">
-        <h2 class="title"><img src="img/emoji/neutral-face.png" alt=""> Інші глаголи</h2>
-        <ul class="list" id="hard-words"></ul>
-      </div>
+    <div class="bg-color bg-color_cyan m-t row" id="cookie-warning" style="display: none;">
+      <p><img src="img/emoji/cookie.png" alt=""> Сайт використовує cookie-файли, щоб запам’ятовувати слова, які ви вивчали. Продовжуючи використовувати цей сайт Ви надаєте згоду на використання cookie-файлів.</p>
+      <button class="btn" id="cookie-check">Зрозуміло</button>
     </div>
-    <p>Всього: <span id="words-number"></span> слів</p>
-    <footer class="t-c m-t m-b">
+    <div class="bg-color bg-color_green m-t row t-c">
+      <h1 class="title title_wm"><a href="#"><img src="img/emoji/baby.png" alt=""> Легкий рівень</a></h1>
+    </div>
+    <div class="bg-color bg-color_gold m-t row t-c">
+      <h1 class="title title_wm"><a href="#"><img src="img/emoji/smiling-face-with-horns.png" alt=""> Складний рівень</a></h1>
+    </div>
+    <footer class="t-c m-b m-t">
       Адамчук Іван © <a href="https://thegradle.github.io/" target="_blank" class="link">thegradle</a>
     </footer>
   </div>
-  <script src="js/words.js"></script>
-  <script src="js/verbs-list.js"></script>
 </body>
 </html>
