@@ -60,7 +60,7 @@ header {
   display: flex;
   flex-direction: column;
   background: url("../img/header.jpg");
-  height: calc(var(--vh, 1vh) * 100 - 35px);
+  height: calc((var(--vh, 1vh) * 100) - 35px);
   background-size: cover;
   background-position-x: 68%;
   padding-top: 35px;
