@@ -1,3 +1,5 @@
+document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
+
 document.getElementById("mobile-menu-btn").addEventListener("click", function() 
 {
   if(document.getElementById("mobile-menu-btn").classList.contains("nav-icon_open"))
