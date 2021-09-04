@@ -16,6 +16,10 @@ body {
 
 /* common styles */
 
+.container_hidden {
+  display: none;
+}
+
 .wrap {
   padding: 0 35px;
   margin: 0 auto;
@@ -86,7 +90,8 @@ nav {
 .menu_mobile {
   display: flex;
   opacity: 0;
-  transition: .3s opacity;
+  visibility: hidden;
+  transition: .3s opacity, .3s visibility;
   width: 100%;
   height: 100vh;
   background: #ff9d87;
@@ -99,6 +104,7 @@ nav {
 
 .menu_mobile_open {
   opacity: 1;
+  visibility: visible;
 }
 
 .menu_mobile .nav--link {
