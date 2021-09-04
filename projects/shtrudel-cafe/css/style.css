@@ -58,6 +58,11 @@ body {
   margin-bottom: 35px;
 }
 
+.list {
+  font-size: 19px;
+  line-height: 1.7;
+}
+
 /* header */
 
 header {
@@ -66,7 +71,7 @@ header {
   background: url("../img/header.jpg");
   height: calc((var(--vh, 1vh) * 100) - 35px);
   background-size: cover;
-  background-position-x: 68%;
+  background-position: center;
   padding-top: 35px;
 }
 
@@ -241,15 +246,31 @@ section {
   line-height: 1.4;
 }
 
-/* section about */
-
-.about-list {
-  font-size: 19px;
-  line-height: 1.7;
-}
-
 /* section gallery */
 
-.gallery img {
-  width: 49.4%;
+.gallery-imgs {
+  text-decoration: none;
+  color: #000;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gallery-imgs img {
+  width: calc(50% - 2.5px);
+  margin-bottom: 5px;
+}
+
+/* section contacts */
+
+.contacts .list {
+  padding: 25px 0;
+}
+
+/* footer */
+
+footer {
+  text-align: center;
+  padding-bottom: 30px;
 }
