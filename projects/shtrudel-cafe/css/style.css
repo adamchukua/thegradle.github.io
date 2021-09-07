@@ -80,6 +80,18 @@ body {
   font-weight: 600;
 }
 
+.emoji {
+  width: 23px;
+  position: relative;
+  top: 4px;
+  left: 1px;
+  padding-right: 7px;
+}
+
+.p-l-30 {
+  padding-left: 30px;
+}
+
 /* header */
 
 header {
