@@ -38,14 +38,14 @@ body {
   padding-bottom: 12px;
   z-index: 11;
   position: absolute;
+  padding-left: 7px;
 }
 
 .title--form {
-  width: 83%;
+  width: 100%;
   height: 40px;
   background: rgb(255 179 128);
   position: relative;
-  top: 12px;
   margin-bottom: 35px;
 }
 
@@ -320,4 +320,32 @@ section.menu:last-child {
 footer {
   text-align: center;
   padding-bottom: 30px;
+}
+
+@media (max-width: 425px) {
+  .title--text {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 380px) {
+  .title--text {
+    font-size: 28px;
+  }
+
+  .img-title {
+    height: 150px;
+    line-height: 150px;
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 340px) {
+  .title--text {
+    font-size: 26px;
+  }
+
+  .list {
+    font-size: 17px;
+  }
 }

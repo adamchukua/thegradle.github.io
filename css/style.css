@@ -180,65 +180,26 @@ h3.subtitle {
 /* PROJECTS */
 
 .projects-item {
-  margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 25px;
+  cursor: pointer;
 }
 
 .projects-item-bgimg {
   width: 100%;
-  border-radius: 10px;
-  opacity: 0.5;
+  height: 100%;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(-45deg, #89DB33, #AA2B8E, #23a6d5);
 }
 
-.projects-item-bgimg_color {
-  height: 100px;
-  background: #cfa0b6;
-  opacity: 1;
+.projects-item-bgimg:hover {
+  background: linear-gradient(-45deg, #89DB33, #AA2B8E, #23a6d5);
 }
 
 .projects-item-content {
-  background: #181818d4;
-  text-align: center;
-  height: 45%;
-  position: relative;
-  bottom: 45%;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  margin-bottom: -75px;
-}
-
-.projects-item-content_color {
-  margin-bottom: 0;
-}
-
-.projects-item-logo {
-  padding: 3%;
-  background-color: #fff;
-  border-radius: 51%;
-  position: relative;
-  bottom: 31%;
-  width: 17%;
-}
-
-.projects-item-text {
-  color: #fff;
-  font-size: 22px;
-  position: relative;
-  bottom: 20px;
-  display: block;
-  text-decoration: none;
-}
-
-.projects-item-text:hover {
-  text-decoration: underline;
-}
-
-.projects-item-text:visited {
-  color: #fff;
-}
-
-.projects-item-text_textonly {
-  position: relative;
-  bottom: -20%;
+  display: none;
 }
 
 /* FOOTER */
