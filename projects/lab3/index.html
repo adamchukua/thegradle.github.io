@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторна робота №3 - Графік функції</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1 class="title">Графік функції</h1>
+  <p class="function">y = e<sup>(0.2 * x<sup>2</sup>)</sup></p>
+  <div class="container">
+    <canvas id="canvas">Ваш веббраузер не підтримує технологію Canvas. Your browser isn't supporting Canvas techology.</canvas>
+    <div class="text">
+      <p class="text-title">Введіть дані:</p>
+      <form>
+        <input type="number" id="from" placeholder="Ліва межа" value="-1">
+        <input type="number" id="to" placeholder="Права межа" value="1">
+        <input type="number" id="step" placeholder="Крок" value="0.1">
+        <button type="button" onclick="BuildGraph()">Побудувати</button>
+        <button type="button" onclick="ClearGraph()">Скинути</button>
+      </form>
+      <div id="result"></div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
