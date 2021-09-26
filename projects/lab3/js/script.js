@@ -108,6 +108,12 @@ function BuildGraph()
         return;
     }
 
+    if(from > to)
+    {
+        alert("Ліва межа має бути менше правої!");
+        return;
+    }
+
     result.style.display = "block";
 
     var title = document.createElement("p");
