@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 100px;
+}
+
+#time {
+  text-align: center;
+  font-size: 96px;
+  color: #2f00ff;
+}
+
+#time span {
+  font-size: 64px;
+  color: #000;
+}
