@@ -267,6 +267,66 @@ nav {
   object-fit: cover;
 }
 
+/* SECTION MORE */
+
+.more-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.more-list-el {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.more-list-el-img {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.more-list-el-back-img--img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.more-list-el--title {
+  font-size: 89px;
+  position: absolute;
+  font-weight: 600;
+  color: #fff;
+  left: -9px;
+  top: 215px;
+}
+
+.more-list-el--text {
+  font-size: 15px;
+  margin-top: 10px;
+  color: #808080;
+  line-height: 1.2;
+}
+
+.more-list-el--btn {
+  margin-top: 15px;
+  height: 50px;
+  outline: none;
+  background: #efca66;
+  border: none;
+  border-radius: 15px;
+  font-weight: 600;
+  transition: .2s background;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.more-list-el--btn:hover {
+  background: #000;
+  color: #fff;
+}
+
 /* SECTION MAP */
 
 .map {
@@ -352,6 +412,7 @@ nav {
   margin-bottom: 20px;
   width: 100%;
   font-size: 15px;
+  line-height: 1.4;
 }
 
 .contact-form--btn {
@@ -361,7 +422,7 @@ nav {
   border: none;
   border-radius: 15px;
   font-weight: 600;
-  transition: .1s background;
+  transition: .2s background;
   width: 250px;
   font-size: 16px;
   cursor: pointer;
