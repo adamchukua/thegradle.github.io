@@ -1,3 +1,27 @@
+@keyframes shakeX {
+  0%, 
+
+  to {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0)
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px,0,0);
+    transform: translate3d(-10px,0,0)
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px,0,0);
+    transform: translate3d(10px,0,0)
+  }
+}
+
+.shakeX {
+  animation-name: shakeX;
+  animation-duration: 1s;
+}
+
 html,
 body {
   height: 100%;
@@ -72,50 +96,6 @@ body {
   text-align: center;
 }
 
-@-webkit-keyframes shakeX {
-  0%, 
-
-  to {
-    -webkit-transform:translateZ(0);
-    transform:translateZ(0);
-  }
-
-  10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: translate3d(-10px,0,0);
-    transform: translate3d(-10px,0,0);
-  }
-
-  20%, 40%, 60%, 80% {
-    -webkit-transform: translate3d(10px,0,0);
-    transform: translate3d(10px,0,0);
-  }
-}
-  
-@keyframes shakeX {
-  0%, 
-
-  to {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0)
-  }
-
-  10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: translate3d(-10px,0,0);
-    transform: translate3d(-10px,0,0)
-  }
-
-  20%, 40%, 60%, 80% {
-    -webkit-transform: translate3d(10px,0,0);
-    transform:translate3d(10px,0,0)
-  }
-}
-
-.shakeX {
-  -webkit-animation-name: shakeX;
-  animation-name: shakeX;
-  animation-duration: 1s;
-}
-
 @media all and (max-width: 1024px) {
   .question-block {
     width: 60%;
@@ -136,4 +116,3 @@ body {
     font-size: 14px;
   }
 }
-

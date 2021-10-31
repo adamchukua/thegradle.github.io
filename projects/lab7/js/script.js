@@ -1,3 +1,19 @@
+// ДОДАВАННЯ ЕЛЕМЕНТІВ
+
+document.body.innerHTML = `
+<div class="question-block">
+  <p class="question-block--text">Щоб отримати відповідь введіть своє запитання у поле нижче, а потім натисніть на магічний шар.</p>
+  <input type="text" class="question-block--input">
+</div>
+<div class="box">
+  <div class="ball">
+    <div class="triangle" onclick="Answer();">
+      <p class="triangle--text">Натисніть, щоб отримати відповідь</p>
+    </div>
+  </div>
+</div>
+`;
+
 // ВІДПОВІДЬ НА ПИТАННЯ
 
 var answers = [
