@@ -101,7 +101,7 @@ body {
 
 .btn__disabled {
   background: #544947;
-  cursor: default;
+  cursor: no-drop;
 }
 
 .btn__disabled:hover {

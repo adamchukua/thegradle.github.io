@@ -1,74 +1,75 @@
-// Validate and set name
-
-var username = prompt("Enter your username:");
-
-while (!username)
-{
-  username = prompt("Please, enter your username:");
+function usernameValidation(data) {
+  return data.length >= 2;
 }
 
-var result = document.querySelector(".result");
-var btn = document.querySelector(".btn");
-var user_name = document.querySelector("#user-name");
-var user_score = document.querySelector("#user-score");
-var user_number = document.querySelector("#user-number");
-var pc_score = document.querySelector("#pc-score");
-var pc_number = document.querySelector("#pc-number");
-
-var user_score_i = parseInt(user_score.innerHTML);
-var pc_score_i = parseInt(pc_score.innerHTML);
-var user_number_i = parseInt(user_number.innerHTML);
-var pc_number_i = parseInt(pc_number.innerHTML);
-user_name.innerHTML = username;
-
-// Game
-
-function Generate()
-{
-  btn.removeAttribute("onclick");
-
-  document.body.style.background = "white";
-  btn.classList.add("btn__disabled");
-  
-  var timer = setInterval(() => 
-  {
-    user_number.innerHTML = Math.floor(Math.random() * 11);
-    pc_number.innerHTML = Math.floor(Math.random() * 11);
-  }, 100);
-
-  setTimeout(() => { 
-    clearInterval(timer);
-
-    setTimeout(() => {
-      user_number_i = parseInt(user_number.innerHTML);
-      pc_number_i = parseInt(pc_number.innerHTML);
-
-      if (user_number_i > pc_number_i)
-      {
-        user_score_i++;
-        document.body.style.background = "linear-gradient(90deg, #5fefc7, transparent)";
-      }
-      else if (user_number_i < pc_number_i)
-      {
-        pc_score_i++;
-        document.body.style.background = "linear-gradient(-90deg, #5fefc7, transparent)";
-      }
-
-      user_score.innerHTML = user_score_i;
-      pc_score.innerHTML = pc_score_i;
-      btn.classList.remove("btn__disabled");
-
-      if (user_score_i >= 3 || pc_score_i >= 3)
-      {
-        result.innerHTML = (user_score_i >= 3) ? user_name.innerHTML + " win!" : "Computer win!";
-        user_number.style.display = "none";
-        pc_number.style.display = "none";
-        btn.innerHTML = "Try again";
-        btn.setAttribute("onclick", "document.location.reload();")
-        return;
-      }
-
-      btn.setAttribute("onclick", "Generate();")
-    }, 1000);
-  }, 2000);
+function randomInt(range) {
+  return Math.floor(Math.random() * range)
 }
+
+function pageReload() {
+  document.location.reload();
+}
+
+const result = document.querySelector(".result");
+const btn = document.querySelector(".btn");
+const userName = document.querySelector("#user-name");
+const userScore = document.querySelector("#user-score");
+const userNumber = document.querySelector("#user-number");
+const pcScore = document.querySelector("#pc-score");
+const pcNumber = document.querySelector("#pc-number");
+
+let userScoreInt = parseInt(userScore.innerHTML);
+let pcScoreInt = parseInt(pcScore.innerHTML);
+let userNumberInt = parseInt(userNumber.innerHTML);
+let pcNumberInt = parseInt(pcNumber.innerHTML);
+let isFinished = true;
+
+while (!usernameValidation(userName.innerHTML)) {
+  userName.innerHTML = prompt("Please, enter your username. It must be at least 2 characters");
+}
+
+btn.addEventListener("click", function() {
+  if(isFinished) {
+    isFinished = false;
+    document.body.style.background = "white";
+    btn.classList.add("btn__disabled");
+    
+    let timer = setInterval(() => {
+      userNumber.innerHTML = randomInt(11);
+      pcNumber.innerHTML = randomInt(11);
+    }, 100);
+
+    setTimeout(() => { 
+      clearInterval(timer);
+
+      setTimeout(() => {
+        userNumberInt = parseInt(userNumber.innerHTML);
+        pcNumberInt = parseInt(pcNumber.innerHTML);
+
+        if (userNumberInt > pcNumberInt) {
+          userScoreInt++;
+          document.body.style.background = "linear-gradient(90deg, #5fefc7, transparent)";
+        } else if (userNumberInt < pcNumberInt) {
+          pcScoreInt++;
+          document.body.style.background = "linear-gradient(-90deg, #5fefc7, transparent)";
+        }
+
+        userScore.innerHTML = userScoreInt;
+        pcScore.innerHTML = pcScoreInt;
+        btn.classList.remove("btn__disabled");
+
+        if (userScoreInt >= 3 || pcScoreInt >= 3) {
+          result.innerHTML = (userScoreInt >= 3) ? userName.innerHTML + " win!" : "Computer win!";
+          userNumber.style.display = "none";
+          pcNumber.style.display = "none";
+          btn.innerHTML = "Try again";
+
+          btn.addEventListener("click", pageReload);
+          return;
+        }
+
+        isFinished = true;
+      }, 1000);
+    }, 2000);
+  }
+});
