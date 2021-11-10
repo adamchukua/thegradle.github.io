@@ -19,10 +19,10 @@
         </div>
         <div class="nav-list">
           <a href="#" class="nav-list--el">Головна</a>
-          <a href="#" class="nav-list--el">Застосунок</a>
-          <a href="#" class="nav-list--el">Галерея</a>
-          <a href="#" class="nav-list--el">Локації</a>
-          <a href="#" class="nav-list--el">Контакти</a>
+          <a href="#app" class="nav-list--el">Застосунок</a>
+          <a href="#gallery" class="nav-list--el">Галерея</a>
+          <a href="#map" class="nav-list--el">Локації</a>
+          <a href="#contact" class="nav-list--el">Контакти</a>
         </div>
       </nav>
     </div>
@@ -67,7 +67,7 @@
         </div>
       </section>
     </div>
-    <section class="app wow animate__animated animate__fadeIn" data-wow-offset="300">
+    <section class="app wow animate__animated animate__fadeIn" data-wow-offset="300" id="app">
       <div class="inner">
         <div class="app-image">
           <div id="circle" class="app-image-circle">
@@ -83,7 +83,7 @@
       </div>
     </section>
   </div>
-  <section class="gallery">
+  <section class="gallery" id="gallery">
     <div class="gallery-block wow animate__animated animate__backInLeft" data-wow-offset="300">
       <img src="img/gallery/1.jpg" alt="" class="gallery-block--img">
     </div>
@@ -102,46 +102,46 @@
   </section>
   <div class="wrap">
     <h1 class="title wow animate__animated animate__fadeInUp">ДІЗНАЙТЕСЬ БІЛЬШЕ</h1>
-    <section class="more-list">
+    <section class="more-list" id="more">
       <div class="more-list-el wow animate__animated animate__fadeInUp">
         <div class="more-list-el-img">
           <img src="img/gallery/1.jpg" class="more-list-el-back-img--img" alt="">
+          <p class="more-list-el--title">МЕНЮ</p>
         </div>
-        <p class="more-list-el--title">МЕНЮ</p>
         <p class="more-list-el--text">Необов'язково сидіти і читати, можна щось й покуштувати.</p>
         <button class="more-list-el--btn">Більше</button>
       </div>
       <div class="more-list-el wow animate__animated animate__fadeInUp">
         <div class="more-list-el-img">
           <img src="img/gallery/2.jpg" class="more-list-el-back-img--img" alt="">
+          <p class="more-list-el--title" style="font-size: 84px; line-height: 70px;">КНИГИ</p>
         </div>
-        <p class="more-list-el--title">КНИГИ</p>
         <p class="more-list-el--text">Але якщо ви вже прийшли, то можна вже і книгу взяти.</p>
         <button class="more-list-el--btn">Більше</button>
       </div>
     </section>
-    <h1 class="title wow animate__animated animate__fadeInUp">КУДИ БІГТИ?</h1>
+    <h1 class="title wow animate__animated animate__fadeInUp" id="map">КУДИ БІГТИ?</h1>
     <section class="map">
       <div class="map-google">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20309.075323923767!2d30.4721233!3d50.4851493!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cd25afb6d4e9%3A0xeb8d1aa2a013042a!2z0JDRiNCw0L0g0J_QvtGH0LDQudC90LA!5e0!3m2!1sru!2sua!4v1632984836466!5m2!1sru!2sua" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
       <div class="map-cities">
-        <h2 class="map-cities--city wow animate__animated animate__fadeInDown">КИЇВ</h2>
-        <h2 class="map-cities--city wow animate__animated animate__fadeInDown">ЛЬВІВ</h2>
+        <h2 class="map-cities--city wow animate__animated animate__fadeInDown">КИЇВ <span>(soon)</span></h2>
+        <h2 class="map-cities--city wow animate__animated animate__fadeInDown">ЛЬВІВ <span>(soon)</span></h2>
         <h2 class="map-cities--city wow animate__animated animate__fadeInDown map-cities--city_avaible">МИКОЛАЇВ</h2>
-        <h2 class="map-cities--city wow animate__animated animate__fadeInDown">ОДЕСА</h2>
-        <h2 class="map-cities--city wow animate__animated animate__fadeInDown">ТЕРНОПІЛЬ</h2>
+        <h2 class="map-cities--city wow animate__animated animate__fadeInDown">ОДЕСА <span>(soon)</span></h2>
+        <h2 class="map-cities--city wow animate__animated animate__fadeInDown">ТЕРНОПІЛЬ <span>(soon)</span></h2>
       </div>
     </section>
-    <h1 class="title wow animate__animated animate__fadeInUp">КУДИ ПИСАТИ?</h1>
+    <h1 class="title wow animate__animated animate__fadeInUp" id="contact">КУДИ ПИСАТИ?</h1>
     <section class="contact">
-      <p class="contact-text">Ви можете написати нам через соціальні мережі (facebook, instagram) або через форму нижче, у будь-якому випадку ми відповімо вам у найкоротший термін та вирішимо Ваше питання</p>
+      <p class="contact-text">Ви можете написати нам через соціальні мережі (<a href="#">facebook</a>, <a href="#">instagram</a>) або через форму нижче, у будь-якому випадку ми відповімо вам у найкоротший термін та вирішимо Ваше питання</p>
       <form action="#" class="contact-form">
-        <input type="text" placeholder="Ім'я" class="contact-form--input">
-        <input type="email" placeholder="Email" class="contact-form--input">
-        <input type="tel" placeholder="Телефон" class="contact-form--input">
-        <textarea placeholder="Текст звернення" class="contact-form--textarea"></textarea>
-        <button type="button" class="contact-form--btn">Відправити</button>
+        <input type="text" placeholder="Ім'я" class="contact-form--input" id="name">
+        <input type="email" placeholder="Email" class="contact-form--input" id="email">
+        <input type="tel" placeholder="Телефон" class="contact-form--input" id="tel">
+        <textarea placeholder="Коментар (необов'язково)" class="contact-form--textarea" id="text"></textarea>
+        <button type="submit" class="contact-form--btn">Відправити</button>
       </form>
     </section>
   </div>
@@ -164,13 +164,18 @@
       </div>
     </div>
   </footer>
-  <div class="modal" id="modal">
-
+  <div class="modal animate__animated animate__fadeIn" id="modal">
+    <div class="modal-content animate__animated animate__backInDown">
+      <span class="close">&times;</span>
+      <div class="modal-content-message">
+        <img src="img/emoji/no-entry.png" alt="" class="modal-content-message--img" id="modal-img">
+        <p class="modal-content-message--text" id="modal-text">Unknown</p>
+      </div>
+    </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
   <script src="js/script.js"></script>
   <script>new WOW().init();</script>
-  
 </body>
 </html>

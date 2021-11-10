@@ -46,6 +46,7 @@ a:hover {
 .wrap {
 	max-width: 1024px;
 	margin: 0 auto;
+  padding: 0 15px;
 }
 
 .inner {
@@ -61,6 +62,72 @@ a:hover {
   margin: 65px 0;
 }
 
+.invalid-input {
+  border-color: #ff0000 !important;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 50px 20px;
+  width: 20%;
+  border-radius: 15px;
+  position: relative;
+}
+
+.close {
+  color: #fff;
+  background: #efca66;
+  border-radius: 10px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute; 
+  top: 19px;
+  right: 19px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content-message--img {
+  width: 40%;
+  margin-bottom: 35px;
+}
+
+.modal-content-message--text {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
 /* HEADER STYLES */
 
 header {
@@ -74,7 +141,7 @@ nav {
 	display: flex;
   justify-content: space-between;
 	align-items: center;
-  padding-top: 30px;
+  padding: 30px 50px 0;
 }
 
 .nav-logo--img {
@@ -205,7 +272,7 @@ nav {
   width: 177px;
   transform: rotate(-17deg);
   position: absolute;
-  left: 33px;
+  left: 50px;
   top: -25px;
 }
 
@@ -258,7 +325,9 @@ nav {
 
 .gallery-block {
   height: 700px;
-  width: calc(100% / 5 - 5px);
+  width: calc(100% / 5);
+  padding: 0 5px;
+  transition: .3s width;
 }
 
 .gallery-block--img {
@@ -285,6 +354,10 @@ nav {
   width: 300px;
   height: 300px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .more-list-el-back-img--img {
@@ -295,11 +368,10 @@ nav {
 
 .more-list-el--title {
   font-size: 89px;
-  position: absolute;
   font-weight: 600;
   color: #fff;
-  left: -9px;
-  top: 215px;
+  position: absolute;
+  line-height: 73px;
 }
 
 .more-list-el--text {
@@ -331,24 +403,43 @@ nav {
 
 .map {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .map-cities {
   font-family: 'eUkraineTitle';
   font-weight: 600;
   color: #959595;
-  position: absolute;
-  right: 220px;
   line-height: 1.4;
+  margin-left: 30px;
 }
 
 .map-cities--city {
   transform: skew(0deg, 4deg);
-  cursor: pointer;
+  cursor: no-drop;
+  display: block;
+  position: relative;
+  overflow: hidden;
 }
 
-.map-cities--city:hover {
-  text-decoration: underline;
+.map-cities--city_avaible::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background: #efca66;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.map-cities--city:hover::after,
+.map-cities--city:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 .map-cities--city:first-child,
@@ -365,6 +456,11 @@ nav {
 .map-cities--city_avaible {
   font-size: 92px;
   color: #efca66;
+  cursor: pointer;
+}
+
+.map-cities--city span {
+  font-size: 32px;
 }
 
 .map-google {
@@ -400,10 +496,11 @@ nav {
   margin-bottom: 20px;
   width: 100%;
   font-size: 15px;
+  box-sizing: border-box;
 }
 
 .contact-form--textarea {
-  height: 200px;
+  height: 145px;
   outline: none;
   border: none;
   border-bottom: 1px solid #000;
@@ -413,6 +510,7 @@ nav {
   width: 100%;
   font-size: 15px;
   line-height: 1.4;
+  box-sizing: border-box;
 }
 
 .contact-form--btn {
