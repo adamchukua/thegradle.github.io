@@ -40,9 +40,10 @@ const userScore = document.querySelector("#user-score");
 const userCard = document.querySelector("#user-card");
 const pcScore = document.querySelector("#pc-score");
 const pcCard = document.querySelector("#pc-card");
-const tryNumber = document.querySelector("#try");
+const tryNumbers = document.querySelectorAll(".try");
 
-let tryNumberInt = parseInt(tryNumber.innerHTML);
+let tryNumberInt1 = parseInt(tryNumbers[0].innerHTML);
+let tryNumberInt2 = parseInt(tryNumbers[1].innerHTML);
 let userScoreInt = parseInt(userScore.innerHTML);
 let pcScoreInt = parseInt(pcScore.innerHTML);
 let isFinished = true;
@@ -57,7 +58,8 @@ btns.forEach(btn => {
   btn.addEventListener("click", function() {
     if(isFinished) {
       isFinished = false;
-      tryNumber.innerHTML = ++tryNumberInt;
+      tryNumbers[0].innerHTML = ++tryNumberInt1;
+      tryNumbers[1].innerHTML = ++tryNumberInt2;
   
       document.body.style.background = "white";
       btn.classList.add("btn__disabled");
@@ -82,7 +84,7 @@ btns.forEach(btn => {
   
           btn.classList.remove("btn__disabled");
   
-          if (tryNumberInt >= 3) {
+          if (tryNumberInt1 >= 3) {
             result.innerHTML = (userScoreInt > pcScoreInt) ? userName.innerHTML + " win!" : "Computer win!";
             userCard.style.display = "none";
             pcCard.style.display = "none";
