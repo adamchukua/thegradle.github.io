@@ -39,14 +39,14 @@ btn.addEventListener("click", function() {
     let timer1, timer2, timer3;
 
     timer1 = setInterval(() => {
-      let randEl = randomInt(9);
       let firstEl = getSlotNumber(line1[0].src);
       let secondEl = getSlotNumber(line1[1].src);
       
       line1.forEach((element, i) => {
         setTimeout(() => {
           if (element == line1[0]) {
-            while (randEl == getSlotNumber(line1[1].src) || randEl == getSlotNumber(line1[2].src)) {
+            let randEl = randomInt(9);
+            while (randEl == getSlotNumber(line1[0].src) || randEl == getSlotNumber(line1[1].src) || randEl == getSlotNumber(line1[2].src)) {
               randEl = randomInt(9);
             }
             element.src = "img/slots/slot-" + randEl + ".jpg";
@@ -61,16 +61,17 @@ btn.addEventListener("click", function() {
 
     setTimeout(() => {
       timer2 = setInterval(() => {
-        let randEl = randomInt(9);
         let firstEl = getSlotNumber(line2[0].src);
         let secondEl = getSlotNumber(line2[1].src);
 
         line2.forEach((element, i) => {
           setTimeout(() => {
             if (element == line2[0]) {
-              while (randEl == getSlotNumber(line2[1].src) || randEl == getSlotNumber(line2[2].src)) {
+              let randEl = randomInt(9);
+              while (randEl == getSlotNumber(line2[0].src) || randEl == getSlotNumber(line2[1].src) || randEl == getSlotNumber(line2[2].src)) {
                 randEl = randomInt(9);
               }
+              console.log(randEl);
               element.src = "img/slots/slot-" + randEl + ".jpg";
             } else if (element == line2[1]) {
               element.src = "img/slots/slot-" + firstEl + ".jpg";
@@ -84,14 +85,14 @@ btn.addEventListener("click", function() {
 
     setTimeout(() => {
       timer3 = setInterval(() => {
-        let randEl = randomInt(9);
         let firstEl = getSlotNumber(line3[0].src);
         let secondEl = getSlotNumber(line3[1].src);
 
         line3.forEach((element, i) => {
           setTimeout(() => {
             if (element == line3[0]) {
-              while (randEl == getSlotNumber(line3[1].src) || randEl == getSlotNumber(line3[2].src)) {
+              let randEl = randomInt(9);
+              while (randEl == getSlotNumber(line3[0].src) || randEl == getSlotNumber(line3[1].src) || randEl == getSlotNumber(line3[2].src)) {
                 randEl = randomInt(9);
               }
               element.src = "img/slots/slot-" + randEl + ".jpg";
@@ -122,7 +123,6 @@ btn.addEventListener("click", function() {
             line2[1].style.boxShadow = "0px 0px 26px 19px rgba(234, 200, 24, 0.74)";
             line3[1].style.boxShadow = "0px 0px 26px 19px rgba(234, 200, 24, 0.74)";
             result.innerHTML = "Ви виграли! Спробуйте ще раз";
-
             return;
           }
 
@@ -131,14 +131,13 @@ btn.addEventListener("click", function() {
             btn.innerHTML = "Try again";
             btn.addEventListener("click", pageReload);
             result.innerHTML = "Ви програли! Спробуйте ще раз";
-
             return;
           }
 
           isFinished = true;
           btn.removeAttribute("disabled");
-        }, 1150);
-      }, 1150);
-    }, 2250);
+        }, 1200);
+      }, 1200);
+    }, 1200);
   }
 });
