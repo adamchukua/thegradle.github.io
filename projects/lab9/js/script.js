@@ -34,7 +34,7 @@ function getCardValue(cardNumber) {
 }
 
 const result = document.querySelector(".result");
-const btn = document.querySelector(".btn");
+const btns = document.querySelectorAll(".btn");
 const userName = document.querySelector("#user-name");
 const userScore = document.querySelector("#user-score");
 const userCard = document.querySelector("#user-card");
@@ -53,47 +53,49 @@ while (!usernameValidation(userName.innerHTML)) {
   userName.innerHTML = prompt("Please, enter your username. It must be at least 2 characters");
 }
 
-btn.addEventListener("click", function() {
-  if(isFinished) {
-    isFinished = false;
-    tryNumber.innerHTML = ++tryNumberInt;
-
-    document.body.style.background = "white";
-    btn.classList.add("btn__disabled");
-    
-    let timer = setInterval(() => {
-      userCardNumber = parseInt(randomInt(36) + 1);
-      pcCardNumber = parseInt(randomInt(36) + 1);
+btns.forEach(btn => {
+  btn.addEventListener("click", function() {
+    if(isFinished) {
+      isFinished = false;
+      tryNumber.innerHTML = ++tryNumberInt;
+  
+      document.body.style.background = "white";
+      btn.classList.add("btn__disabled");
       
-      userCard.src = "img/cards/card-" + userCardNumber + ".jpg";
-      pcCard.src = "img/cards/card-" + pcCardNumber + ".jpg";
-    }, 100);
-
-    setTimeout(() => { 
-      clearInterval(timer);
-
-      userScoreInt += getCardValue(userCardNumber);
-      pcScoreInt += getCardValue(pcCardNumber);
-
-      setTimeout(() => {
-        userScore.innerHTML = userScoreInt;
-        pcScore.innerHTML = pcScoreInt;
-
-        btn.classList.remove("btn__disabled");
-
-        if (tryNumberInt >= 3) {
-          result.innerHTML = (userScoreInt > pcScoreInt) ? userName.innerHTML + " win!" : "Computer win!";
-          userCard.style.display = "none";
-          pcCard.style.display = "none";
-          btn.innerHTML = "Try again";
-          document.body.style.background = "linear-gradient(90deg, #5fefc7, transparent)";
-
-          btn.addEventListener("click", pageReload);
-          return;
-        }
-
-        isFinished = true;
-      }, 1000);
-    }, 2000);
-  }
+      let timer = setInterval(() => {
+        userCardNumber = parseInt(randomInt(36) + 1);
+        pcCardNumber = parseInt(randomInt(36) + 1);
+        
+        userCard.src = "img/cards/card-" + userCardNumber + ".jpg";
+        pcCard.src = "img/cards/card-" + pcCardNumber + ".jpg";
+      }, 100);
+  
+      setTimeout(() => { 
+        clearInterval(timer);
+  
+        userScoreInt += getCardValue(userCardNumber);
+        pcScoreInt += getCardValue(pcCardNumber);
+  
+        setTimeout(() => {
+          userScore.innerHTML = userScoreInt;
+          pcScore.innerHTML = pcScoreInt;
+  
+          btn.classList.remove("btn__disabled");
+  
+          if (tryNumberInt >= 3) {
+            result.innerHTML = (userScoreInt > pcScoreInt) ? userName.innerHTML + " win!" : "Computer win!";
+            userCard.style.display = "none";
+            pcCard.style.display = "none";
+            btn.innerHTML = "Try again";
+            document.body.style.background = "linear-gradient(90deg, #5fefc7, transparent)";
+  
+            btn.addEventListener("click", pageReload);
+            return;
+          }
+  
+          isFinished = true;
+        }, 1000);
+      }, 2000);
+    }
+  });
 });
