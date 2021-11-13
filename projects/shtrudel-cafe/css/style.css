@@ -67,7 +67,7 @@ body {
 }
 
 .img-title {
-  background: url("../img/gallery-3.jpg");
+  background: url("../img/menu.jpg");
   background-size: cover;
   background-position-y: 13%;
   width: 100%;
@@ -307,6 +307,7 @@ section.menu:last-child {
 .gallery-imgs img {
   width: calc(50% - 2.5px);
   margin-bottom: 5px;
+  transition: .2s width;
 }
 
 /* section contacts */
