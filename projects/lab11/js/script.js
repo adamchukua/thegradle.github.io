@@ -55,6 +55,7 @@ function CheckWord(answer) {
       $(".answer--input").css("border-color", "#000");
     } else {
       $(".answer--input").css("border-color", "#ff0000");
+      isFinished = true;
       return;
     }
 
