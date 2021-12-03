@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LangControl</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="modal">
+    <div class="modal-content">
+      <span class="modal-close" id="close">&times;</span>
+      <p class="modal-title">Результати</p>
+      <p>Рівень знань: <span id="level"></span></p>
+      <p id="level-text"></p>
+    </div>
+  </div>
+  <div class="content">
+    <a href="../../index.html" class="main-link">Головна</a>
+    <div class="settings">
+      <p class="settings-title">Рівень складності</p>
+      <input type="radio" id="low" name="level" value="low" checked>
+      <label for="low">Початковий</label><br>
+      <input type="radio" id="middle" name="level" value="middle">
+      <label for="middle">Середній</label><br>
+      <input type="radio" id="high" name="level" value="high">
+      <label for="high">Високий</label>
+    </div>
+    <div class="test">
+      <div class="card">
+        <span id="word"></span>
+      </div>
+      <div class="number">
+        <span id="numberOfDoneWords">1</span>/<span id="numberOfUndoneWords">10</span>
+      </div>
+      <div class="answer">
+        <input type="text" class="answer--input" placeholder="Введіть переклад та натисніть Enter" title="Введіть переклад та натисніть Enter">
+      </div>
+      <div class="stat">
+        <div class="stat-item" id="right">0</div>
+        <div class="stat-item" id="wrong">0</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
