@@ -50,7 +50,7 @@ let isFinished = true;
 let userCardNumber;
 let pcCardNumber;
 
-userName = getCookie("username");
+userName.innerHTML = getCookie("username");
 
 while (!usernameValidation(userName.innerHTML)) {
   userName.innerHTML = prompt("Please, enter your username. It must be at least 2 characters");
