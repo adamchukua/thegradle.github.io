@@ -45,11 +45,12 @@ username.addEventListener("keypress", function(event) {
   if (key == 13) {
     if (!usernameValidation(username.value)) {
       alert("Ім'я не збережено: ім'я має бути від 2 до 20 символів.");
+      return;
     }
     setCookie("username", username.value, 7);
-    alert("Ім'я збережено")
-    console.log(getCookie("username"));
+    alert("Ім'я збережено");
 
     return false;  
   }
 });
+

@@ -26,6 +26,8 @@ const btn = document.querySelector(".control--btn");
 let tryNumberInt = parseInt(tryNumber.innerHTML);
 let isFinished = true;
 
+username = getCookie("username");
+
 while (!usernameValidation(username.innerHTML)) {
   username.innerHTML = prompt("Please, enter your username. It must be at least 2 and less than 20 characters");
 }

@@ -24,6 +24,8 @@ let userNumberInt = parseInt(userNumber.innerHTML);
 let pcNumberInt = parseInt(pcNumber.innerHTML);
 let isFinished = true;
 
+userName = getCookie("username");
+
 while (!usernameValidation(userName.innerHTML)) {
   userName.innerHTML = prompt("Please, enter your username. It must be at least 2 characters");
 }
