@@ -1,13 +1,14 @@
 .main-link {
-  width: 100%;
+  width: 160px;
   text-align: center;
   display: block;
-  padding: 35px;
+  padding: 19px;
   background: bisque;
   border-radius: 50px;
   color: #000;
-  font-size: 2.5vw;
+  font-size: 27px;
   font-weight: 900;
+  margin: 0 auto;
   margin-bottom: 30px;
   text-decoration: none;
 }

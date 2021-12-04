@@ -51,7 +51,6 @@ let userCardNumber;
 let pcCardNumber;
 
 userName.innerHTML = getCookie("username");
-console.log(getCookie("username"));
 
 while (!usernameValidation(userName.innerHTML)) {
   userName.innerHTML = prompt("Please, enter your username. It must be at least 2 characters");
