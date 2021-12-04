@@ -1,4 +1,4 @@
-// Animation on the main page
+///// Animation on the main page /////
 
 const sections = document.querySelectorAll(".content-item");
 const section_lists = document.querySelectorAll(".content-item-list");
@@ -28,3 +28,28 @@ if (screen.width > 480 ) {
     ShowSection(1);
   });
 }
+
+///// Save username /////
+
+const username = document.querySelector("#username");
+username.value = getCookie("username");
+
+function usernameValidation(data) {
+  return data.length >= 2 && data.length <= 20;
+}
+
+username.addEventListener("keypress", function(event) {
+  eraseCookie("username");
+
+  let key = event.which;
+  if (key == 13) {
+    if (!usernameValidation(username.value)) {
+      alert("Ім'я не збережено: ім'я має бути від 2 до 20 символів.");
+    }
+    setCookie("username", username.value, 7);
+    alert("Ім'я збережено")
+    console.log(getCookie("username"));
+
+    return false;  
+  }
+});

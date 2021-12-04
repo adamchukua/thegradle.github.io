@@ -1,6 +1,7 @@
 // ДОДАВАННЯ ЕЛЕМЕНТІВ
 
 document.body.innerHTML = `
+<a href="../../index.html" class="main-link">Головна</a>
 <div class="question-block">
   <p class="question-block--text">Щоб отримати відповідь введіть своє запитання у поле нижче, а потім натисніть на магічний шар.</p>
   <input type="text" class="question-block--input">
