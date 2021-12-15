@@ -29,24 +29,28 @@ function ChangeSection() {
 /////// GALLERY ///////
 
 const images = document.querySelectorAll(".gallery-imgs > img");
-let isPreview = false;
+const modal = document.getElementById("modal");
+const closeBtn = document.getElementsByClassName("close")[0];
 
+// When the user clicks on <span> (x), close the modal
+closeBtn.addEventListener("click", function() {
+  modal.style.opacity = "0";
+  modal.style.visibility = "hidden";
+});
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.opacity = "0";
+    modal.style.visibility = "hidden";
+  }
+}
+
+// When the user clicks on the image open modal image with higher resolution
 images.forEach(image => {
   image.addEventListener("click", function(event) {
-    if (isPreview) {
-      isPreview = false;
-
-      images.forEach(unclickedImage => {
-        unclickedImage.style.width = "calc(50% - 2.5px)";
-      });
-    } else {
-      isPreview = true;
-
-      images.forEach(unclickedImage => {
-        unclickedImage.style.width = "0%";
-      });
-  
-      event.target.style.width = "100%";
-    }
+    document.querySelector("#modal-img").src = event.target.src.replace("min", "full");
+    modal.style.opacity = "1";
+    modal.style.visibility = "visible";
   });
 });
