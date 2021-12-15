@@ -352,6 +352,12 @@ footer {
   width: 100%;
 }
 
+#modal-img-hidden {
+  position: absolute;
+  top: 500000px;
+  left: 500000px;
+}
+
 .close {
   color: #aaa;
   font-size: 42px;

@@ -36,6 +36,7 @@ const closeBtn = document.getElementsByClassName("close")[0];
 closeBtn.addEventListener("click", function() {
   modal.style.opacity = "0";
   modal.style.visibility = "hidden";
+  document.querySelector("#modal-img").src = "";
 });
 
 // When the user clicks anywhere outside of the modal, close it
@@ -43,13 +44,20 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.opacity = "0";
     modal.style.visibility = "hidden";
+    document.querySelector("#modal-img").src = "";
   }
 }
 
 // When the user clicks on the image open modal image with higher resolution
 images.forEach(image => {
   image.addEventListener("click", function(event) {
-    document.querySelector("#modal-img").src = event.target.src.replace("min", "full");
+    document.querySelector("#modal-img").src = event.target.src;
+    document.querySelector("#modal-img-hidden").src = event.target.src.replace("min", "full");
+
+    document.querySelector("#modal-img-hidden").onload = function() {
+      document.querySelector("#modal-img").src = document.querySelector("#modal-img-hidden").src;
+    };
+
     modal.style.opacity = "1";
     modal.style.visibility = "visible";
   });
