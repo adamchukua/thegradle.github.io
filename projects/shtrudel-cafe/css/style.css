@@ -346,6 +346,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  position: relative;
 }
 
 #modal-img {
@@ -360,7 +361,7 @@ footer {
 
 .close {
   color: #aaa;
-  font-size: 42px;
+  font-size: 62px;
   font-weight: bold;
 }
 
@@ -369,6 +370,36 @@ footer {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal-btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+}
+
+.modal-btns button {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.modal-btns img {
+  width: 50px;
+  height: 50px;
+  opacity: 0.6;
+}
+
+@media (min-width: 586px) {
+  #modal-img {
+    height: 90%;
+    width: unset;
+  }
+
+  .modal-content {
+    align-items: center;
+  }
 }
 
 @media (max-width: 425px) {
