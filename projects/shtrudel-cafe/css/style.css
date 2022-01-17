@@ -34,7 +34,7 @@ body {
 }
 
 .title--text {
-  font-size: 36px;
+  font-size: 31px;
   padding-bottom: 12px;
   z-index: 11;
   position: absolute;
@@ -55,11 +55,18 @@ body {
   text-align: left;
 }
 
+.list img {
+  width: 25px;
+  height: 25px;
+  opacity: 0.8;
+}
+
 .list_dashed li {
   display: flex;
   justify-content: space-between;
   border-bottom: 2px dashed #ff9d87;
   padding: 5px 0;
+  align-items: center;
 }
 
 .container_hidden {
@@ -404,13 +411,13 @@ footer {
 
 @media (max-width: 425px) {
   .title--text {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 
 @media (max-width: 380px) {
   .title--text {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .img-title {
@@ -422,7 +429,7 @@ footer {
 
 @media (max-width: 340px) {
   .title--text {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .list {
