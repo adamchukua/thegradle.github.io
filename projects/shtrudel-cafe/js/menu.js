@@ -27,13 +27,15 @@ function ShowInfo(name) {
 
 menuBtns.forEach(item => {
   item.addEventListener("click", function() {
-    ShowInfo(event.path[1].innerText);
+    //ShowInfo(event.path[1].innerText);
+    console.log(event.target);
   });
 });
 
 menuList.forEach(item => {
   item.addEventListener("click", function() {
-    ShowInfo(event.target.innerText);
+    //ShowInfo(event.target.innerText);
+    console.log(event.target);
   });
 });
 
