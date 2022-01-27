@@ -11,9 +11,10 @@
     <script src="menu.json"></script>
     <script>
         $.getJSON("menu.json", function(json) {
-            json.forEach(element => {
-                document.write(element);
-                console.log(element);
+            
+            Object.keys(json).forEach(key => {
+                console.log(key);        // the name of the current key.
+                console.log(json[key]); // the value of the current key.
             });
         });
     </script>
