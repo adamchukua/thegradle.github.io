@@ -12,22 +12,22 @@
     <script>
         $.getJSON("menu.json", function(data) {
             Object.keys(data).forEach(group => {
-                document.write = `
+                document.write(`
                     <section class="menu">
                         <div class="title">
                             <p class="title--text">` + group + `</p>
                         </div>
                         <ul class="list list_dashed">
-                `;
+                `);
 
                 Object.keys(group).forEach(item => {
-                    document.write = "<li><p>" + 
+                    document.write("<li><p>" + 
                         data[group][item] + 
                         
-                        "₴</span><img src=\"img/next.png\" alt=\"\"></li>";
+                        "₴</span><img src=\"img/next.png\" alt=\"\"></li>");
                 });
 
-                document.write = "</ul></section>";
+                document.write("</ul></section>");
             });
         });
     </script>
