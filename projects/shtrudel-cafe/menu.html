@@ -16,7 +16,6 @@
   <meta property="og:description" content="Працюємо з 8:00 до 22:00 на вул. Шосейна 35 та Декабристів 38/2">
   <meta property="og:type" content="website">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="data/menu.json"></script>
 </head>
 <body>
   <nav class="menu_mobile" id="nav-menu">
@@ -43,7 +42,7 @@
     <h1 class="img-title">Меню</h1>
     <div class="inner">
       <script>
-        $.getJSON("menu.json", function(data) {
+        $.getJSON("data/menu.json", function(data) {
           Object.keys(data).forEach(group => {
             document.write(`
               <section class="menu">
