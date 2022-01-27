@@ -19,10 +19,13 @@
                         </div>
                         <ul class="list list_dashed">
                 `);
-                
-                console.log(group);
-                console.log(data[group][0]);
-                console.log(data[group][0].name);
+
+                for (let i = 0; i < data[group].length; i++) {
+                    document.write("<li><p>" + 
+                        data[group][i].name + 
+                        "</p><span>" + data[group][i].price + 
+                        "₴</span><img src=\"img/next.png\" alt=\"\"></li>");
+                }
 
                 /*Object.keys(group).forEach(item => {
                     document.write("<li><p>" + 
