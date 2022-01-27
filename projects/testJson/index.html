@@ -10,11 +10,24 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="menu.json"></script>
     <script>
-        $.getJSON("menu.json", function(json) {
-            
-            Object.keys(json).forEach(key => {
-                console.log(key);        // the name of the current key.
-                console.log(json[key]); // the value of the current key.
+        $.getJSON("menu.json", function(data) {
+            Object.keys(data).forEach(group => {
+                document.write = `
+                    <section class="menu">
+                        <div class="title">
+                            <p class="title--text">` + group + `</p>
+                        </div>
+                        <ul class="list list_dashed">
+                `;
+
+                Object.keys(group).forEach(item => {
+                    document.write = "<li><p>" + 
+                        data[group][item][name] + 
+                        "</p><span>" + data[group][item][price] + 
+                        "₴</span><img src=\"img/next.png\" alt=\"\"></li>";
+                });
+
+                document.write = "</ul></section>";
             });
         });
     </script>
