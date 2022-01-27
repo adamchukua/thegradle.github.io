@@ -16,6 +16,7 @@
   <meta property="og:description" content="Працюємо з 8:00 до 22:00 на вул. Шосейна 35 та Декабристів 38/2">
   <meta property="og:type" content="website">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="data/menu.json"></script>
 </head>
 <body>
   <nav class="menu_mobile" id="nav-menu">
@@ -44,7 +45,7 @@
       <script>
         $.getJSON("data/menu.json", function(data) {
           Object.keys(data).forEach(group => {
-            document.write(`
+            $('inner').append(`
               <section class="menu">
                   <div class="title">
                       <p class="title--text">` + group + `</p>
@@ -53,13 +54,13 @@
             `);
 
             for (let i = 0; i < data[group].length; i++) {
-              document.write("<li><p>" + 
+              $('inner').append("<li><p>" + 
                 data[group][i].name + 
                 "</p><span>" + data[group][i].price + 
                 "₴</span><img src=\"img/next.png\" alt=\"\"></li>");
             }
 
-            document.write("</ul></section>");
+            $('inner').append("</ul></section>");
           });
         });
       </script>
