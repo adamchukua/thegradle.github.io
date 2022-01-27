@@ -11,6 +11,8 @@
     <script src="menu.json"></script>
     <script>
         $.getJSON("menu.json", function(data) {
+            console.log(data);
+
             Object.keys(data).forEach(group => {
                 document.write(`
                     <section class="menu">
@@ -19,13 +21,17 @@
                         </div>
                         <ul class="list list_dashed">
                 `);
-
-                Object.keys(group).forEach(item => {
+                
+                console.log(group);
+                console.log(group[name]);
+                console.log(group[price]);
+                
+                /*Object.keys(group).forEach(item => {
                     document.write("<li><p>" + 
                         data[group][name] + 
                         "</p><span>" + data[group][price] + 
                         "₴</span><img src=\"img/next.png\" alt=\"\"></li>");
-                });
+                });*/
 
                 document.write("</ul></section>");
             });
