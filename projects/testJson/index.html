@@ -11,7 +11,10 @@
     <script src="menu.json"></script>
     <script>
         $.getJSON("menu.json", function(json) {
-            console.log(json); // this will show the info it in firebug console
+            json.forEach(element => {
+                document.write(element);
+                console.log(element);
+            });
         });
     </script>
 </body>
