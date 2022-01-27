@@ -54,7 +54,7 @@
             `;
 
             for (let i = 0; i < data[group].length; i++) {
-              document.querySelector("#content").innerHTML += "<li><p>" + 
+              document.querySelectorAll(".list")[document.querySelectorAll(".list").length - 1].innerHTML += "<li><p>" + 
                 data[group][i].name + 
                 "</p><span>" + data[group][i].price + 
                 "₴</span><img src=\"img/next.png\" alt=\"\"></li>";
