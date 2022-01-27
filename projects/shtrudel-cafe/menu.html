@@ -45,7 +45,7 @@
       <script>
         $.getJSON("data/menu.json", function(data) {
           Object.keys(data).forEach(group => {
-            document.querySelector("#content").innerHTML = `
+            document.querySelector("#content").innerHTML += `
               <section class="menu">
                   <div class="title">
                       <p class="title--text">` + group + `</p>
@@ -54,13 +54,13 @@
             `;
 
             for (let i = 0; i < data[group].length; i++) {
-              document.querySelector("#content").innerHTML = "<li><p>" + 
+              document.querySelector("#content").innerHTML += "<li><p>" + 
                 data[group][i].name + 
                 "</p><span>" + data[group][i].price + 
                 "₴</span><img src=\"img/next.png\" alt=\"\"></li>";
             }
 
-            document.querySelector("#content").innerHTML = "</ul></section>";
+            document.querySelector("#content").innerHTML += "</ul></section>";
           });
         });
       </script>
