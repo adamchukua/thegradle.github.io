@@ -11,8 +11,6 @@
     <script src="menu.json"></script>
     <script>
         $.getJSON("menu.json", function(data) {
-            console.log(data);
-
             Object.keys(data).forEach(group => {
                 document.write(`
                     <section class="menu">
@@ -23,7 +21,8 @@
                 `);
                 
                 console.log(group);
-                console.log(data[group]);
+                console.log(data[group].name);
+                console.log(data[group][name]);
 
                 /*Object.keys(group).forEach(item => {
                     document.write("<li><p>" + 
