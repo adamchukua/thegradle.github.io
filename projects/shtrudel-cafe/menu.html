@@ -45,22 +45,22 @@
       <script>
         $.getJSON("data/menu.json", function(data) {
           Object.keys(data).forEach(group => {
-            $('#content').append(`
+            document.querySelector("#content").innerHTML = `
               <section class="menu">
                   <div class="title">
                       <p class="title--text">` + group + `</p>
                   </div>
                   <ul class="list list_dashed">
-            `);
+            `;
 
             for (let i = 0; i < data[group].length; i++) {
-              $('#content').append("<li><p>" + 
+              document.querySelector("#content").innerHTML = "<li><p>" + 
                 data[group][i].name + 
                 "</p><span>" + data[group][i].price + 
-                "₴</span><img src=\"img/next.png\" alt=\"\"></li>");
+                "₴</span><img src=\"img/next.png\" alt=\"\"></li>";
             }
 
-            $('#content').append("</ul></section>");
+            document.querySelector("#content").innerHTML = "</ul></section>";
           });
         });
       </script>
