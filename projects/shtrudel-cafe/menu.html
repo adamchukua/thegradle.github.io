@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Меню Штрудель Кафе – Найсмачніші штруделя в Миколаєві</title>
+  <title>Меню – Штрудель Кафе</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/menu.css">
@@ -15,6 +15,8 @@
   <meta property="og:image" content="img/gallery-1.jpg">
   <meta property="og:description" content="Працюємо з 8:00 до 22:00 на вул. Шосейна 35 та Декабристів 38/2">
   <meta property="og:type" content="website">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="data/menu.json"></script>
 </head>
 <body>
   <nav class="menu_mobile" id="nav-menu">
@@ -40,44 +42,68 @@
   <div id="container">
     <h1 class="img-title">Меню</h1>
     <div class="inner">
-      <section class="menu">
-        <div class="title">
-          <p class="title--text">Безалкогольні коктейлі</p>
-        </div>
-        <ul class="list list_dashed">
-          <li><p>Глінтвейн</p><span>40₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Лимонад базилік</p><span>43₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Лимонад грейфрут</p><span>43₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Лимонад класичний</p><span>43₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Лимонад малина</p><span>43₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Лимонад огірковий</p><span>43₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Лимонад смородина</p><span>43₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Лимонад тархун</p><span>43₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Мохіто</p><span>54₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Мохіто арбуз</p><span>54₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Мохіто полуниця</p><span>54₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Мохіто смородина</p><span>54₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Фрапе (шоколадний)</p><span>33₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Фрапучіне</p><span>33₴</span><img src="img/next.png" alt=""></li>
-        </ul>
-      </section>
-      <section class="menu">
-        <div class="title">
-          <p class="title--text">Безалкогольні напої</p>
-        </div>
-        <ul class="list list_dashed">
-          <li><p>7 up</p><span>23₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Боржомі</p><span>42₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Єсентуки</p><span>25₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Мірінда</p><span>23₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Моршинська 0,33</p><span>20₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Моршинська 0,5</p><span>21₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Пепсі 0,5</p><span>23₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Пепсі скло</p><span>19₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Сік в асс.</p><span>18₴</span><img src="img/next.png" alt=""></li>
-          <li><p>Тонік Євервест</p><span>23₴</span><img src="img/next.png" alt=""></li>
-        </ul>
-      </section>
+      <script>
+        $.getJSON("menu.json", function(data) {
+          Object.keys(data).forEach(group => {
+            document.write(`
+              <section class="menu">
+                  <div class="title">
+                      <p class="title--text">` + group + `</p>
+                  </div>
+                  <ul class="list list_dashed">
+            `);
+
+            for (let i = 0; i < data[group].length; i++) {
+              document.write("<li><p>" + 
+                data[group][i].name + 
+                "</p><span>" + data[group][i].price + 
+                "₴</span><img src=\"img/next.png\" alt=\"\"></li>");
+            }
+
+            document.write("</ul></section>");
+          });
+        });
+      </script>
+      <!-- 
+        <section class="menu">
+          <div class="title">
+            <p class="title--text">Безалкогольні коктейлі</p>
+          </div>
+          <ul class="list list_dashed">
+            <li><p>Глінтвейн</p><span>40₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Лимонад базилік</p><span>43₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Лимонад грейфрут</p><span>43₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Лимонад класичний</p><span>43₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Лимонад малина</p><span>43₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Лимонад огірковий</p><span>43₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Лимонад смородина</p><span>43₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Лимонад тархун</p><span>43₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Мохіто</p><span>54₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Мохіто арбуз</p><span>54₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Мохіто полуниця</p><span>54₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Мохіто смородина</p><span>54₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Фрапе (шоколадний)</p><span>33₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Фрапучіне</p><span>33₴</span><img src="img/next.png" alt=""></li>
+          </ul>
+        </section>
+        <section class="menu">
+          <div class="title">
+            <p class="title--text">Безалкогольні напої</p>
+          </div>
+          <ul class="list list_dashed">
+            <li><p>7 up</p><span>23₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Боржомі</p><span>42₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Єсентуки</p><span>25₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Мірінда</p><span>23₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Моршинська 0,33</p><span>20₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Моршинська 0,5</p><span>21₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Пепсі 0,5</p><span>23₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Пепсі скло</p><span>19₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Сік в асс.</p><span>18₴</span><img src="img/next.png" alt=""></li>
+            <li><p>Тонік Євервест</p><span>23₴</span><img src="img/next.png" alt=""></li>
+          </ul>
+        </section>
+      -->
       <!-- 
         <section class="menu">
         <div class="title">
@@ -442,5 +468,4 @@
   <script src="js/menu-data.js"></script>
   <script src="js/menu.js"></script>
 </body>
-
 </html>
