@@ -25,3 +25,7 @@ function ChangeSection() {
   container.classList.toggle("container_hidden");
   this.scrollIntoView();
 }
+
+/////// FOOTER DATE ///////
+
+document.querySelector("footer").innerHTML = "© " + new Date().getFullYear() + " «Штрудель Кафе»";

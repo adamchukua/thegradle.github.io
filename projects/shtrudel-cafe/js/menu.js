@@ -1,5 +1,4 @@
 const menuList = document.querySelectorAll("li");
-const menuBtns = document.querySelectorAll("li img");
 const modalInfo = document.querySelector(".modal-info");
 const closeBtn = document.querySelector(".close");
 const dishImg = document.querySelector(".modal-info-content__img");
@@ -10,32 +9,33 @@ const dishPrice = document.querySelector(".modal-info-content__price");
 function ShowInfo(name) {
   modalInfo.style.opacity = "1";
   modalInfo.style.visibility = "visible";
-  
-  /*console.log("1" + name);
-  if (!(name in menuDict)) {
-    modalInfo.style.opacity = "0";
-    modalInfo.style.visibility = "hidden";
-    console.log("2" + name);
-    return;
-  }*/
 
-  dishImg.src = "img/menu/" + menuDict[name][0];
-  dishTitle.innerText = menuDict[name][1];
-  dishDesc.innerText = menuDict[name][2];
-  dishPrice.innerText = menuDict[name][3];
-}
+  let info = name.split("_");
 
-menuBtns.forEach(item => {
-  item.addEventListener("click", function() {
-    //ShowInfo(event.path[1].innerText);
-    console.log(event.target);
+  $.getJSON("data/menu.json", function(data) {
+    Object.keys(data).forEach(group => {
+      if (info[0] == group) {
+        for (let i = 0; i < data[group].length; i++) {
+          if (info[1] == i) {
+            //dishImg.src = "img/menu/" + menuDict[name][0];
+            dishTitle.innerText = data[group][i].name;
+            //dishDesc.innerText = data[group][i];
+            dishPrice.innerText = data[group][i].price + "₴";
+          }
+        }
+      }
+    });
   });
-});
+}
 
 menuList.forEach(item => {
   item.addEventListener("click", function() {
-    //ShowInfo(event.target.innerText);
-    console.log(event.target);
+    event.path.forEach(element => {
+      if (element.nodeName == "LI") {
+        ShowInfo(element.id);
+        return;
+      }
+    });
   });
 });
 
@@ -43,7 +43,7 @@ menuList.forEach(item => {
 closeBtn.addEventListener("click", function() {
   modalInfo.style.opacity = "0";
   modalInfo.style.visibility = "hidden";
-  dishImg.src = "";
+  dishImg.src = "img/menu/default.png";
   dishTitle.innerText = "";
   dishDesc.innerText = "";
   dishPrice.innerText = "";
