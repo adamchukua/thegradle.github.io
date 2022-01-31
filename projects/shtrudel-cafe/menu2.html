@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Меню – Штрудель Кафе</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <meta property="og:title" content="Штрудель Кафе – Найсмачніші штруделя в Миколаєві">
+  <meta property="og:image" content="img/gallery-1.jpg">
+  <meta property="og:description" content="Працюємо з 8:00 до 22:00 на вул. Шосейна 35 та Декабристів 38/2">
+  <meta property="og:type" content="website">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="data/menu.json"></script>
+  <style>
+    .list_hidden {
+      display: none;
+    }
+
+    section {
+      padding: 20px 0;
+    }
+
+    .inner {
+      padding: 25px 35px;
+    }
+
+    section.menu:last-child {
+      padding-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="menu_mobile" id="nav-menu">
+    <a href="index.html" class="nav--link">Головна</a>
+    <a href="index.html#about" class="nav--link">Про нас</a>
+    <a href="index.html#gallery" class="nav--link">Галерея</a>
+    <a href="#" class="nav--link">Меню</a>
+    <a href="index.html#contacts" class="nav--link">Контакти</a>
+  </nav>
+  <div class="inner">
+    <nav>
+      <a href="index.html" class="nav--logo"><img src="img/logo.png" alt=""></a>
+      <div class="nav-icon" id="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </div>
+  <div id="container">
+    <h1 class="img-title">Меню</h1>
+    <div class="inner" id="content">
+      <script>
+        $.getJSON("data/menu.json", function(data) {
+          Object.keys(data).forEach(group => {
+            document.querySelector("#content").innerHTML += `
+              <section class="menu">
+                  <div class="title">
+                      <p class="title--text">` + group + `</p>
+                  </div>
+                  <ul class="list list_dashed list_hidden">
+            `;
+
+            for (let i = 0; i < data[group].length; i++) {
+              document.querySelectorAll(".list")[document.querySelectorAll(".list").length - 1].innerHTML += "<li id=\""
+                + group + "_" + i + "\"><p>" + 
+                data[group][i].name + 
+                "</p><span>" + data[group][i].price + 
+                "₴</span><img src=\"img/next.png\" alt=\"\"></li>";
+            }
+
+            document.querySelector("#content").innerHTML += "</ul></section>";
+          });
+        });
+
+        $.getScript("js/menu.js");
+      </script>
+    </div>
+    <footer>
+      © 2021 «Штрудель Кафе»
+    </footer>
+  </div>
+  <div class="modal-info">
+    <div class="modal-info-content">
+      <span class="close" style="float: right;">&times;</span>
+      <img src="img/menu/default.png" alt="" class="modal-info-content__img">
+      <p class="modal-info-content__title"></p>
+      <p class="modal-info-content__desc"></p>
+      <p class="modal-info-content__price"></p>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

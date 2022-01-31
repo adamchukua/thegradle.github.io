@@ -48,3 +48,13 @@ closeBtn.addEventListener("click", function() {
   dishDesc.innerText = "";
   dishPrice.innerText = "";
 });
+
+// additional
+
+const menuSectionList = document.querySelectorAll(".menu");
+
+menuSectionList.forEach(section => {
+  section.addEventListener("click", function(event) {
+    event.path[2].children[1].classList.toggle("list_hidden");
+  });
+});
