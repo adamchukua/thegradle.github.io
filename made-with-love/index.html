@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Скільки ти вже не їла шоколад?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Noto+Sans+Display:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="chocolate.png" type="image/png">
+  <style>
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+    *,
+    body {
+      font-family: 'Arimo', sans-serif;
+      font-family: 'Noto Sans Display', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #89DB33, #AA2B8E, #23a6d5);
+      background-size: 400% 400%;
+      animation: gradient 30s ease infinite;
+    }
+
+    span {
+      margin-top: 65px;
+      font-size: 92px;
+      display: block;
+      line-height: 85px;
+      margin-bottom: 45px;
+    }
+
+    #app {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    button {
+      margin-top: 45px;
+      border: 2px solid #000;
+      background: inherit;
+      width: 100%;
+      height: 50px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 13px;
+    }
+
+    button:hover {
+      background: #000;
+      color: #fff;
+    }
+  </style>
+  <!-- <a href="https://www.flaticon.com/free-icons/chocolate" title="chocolate icons">Chocolate icons created by dDara - Flaticon</a> -->
+</head>
+<body>
+  <div id="app">
+    <h1><span>{{ hours }} годин</span>ти вже не їла шоколад {{ smile }}</h1>
+    <button @click="reset">Я з'їла шоколад :(</button>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const App = {
+      data() {
+        return {
+          hours: '',
+          currentDate: new Date().getTime(),
+          savedDate: '',
+          smile: ''
+        }
+      },
+      methods: {
+        reset() {
+          localStorage.savedDate = this.currentDate;
+          alert('Зібралися іііііі мотивуючий цьом :*');
+          location.reload();
+        }
+      },
+      mounted() {
+        if (localStorage.savedDate) {
+          this.savedDate = localStorage.savedDate;
+        } else {
+          this.savedDate = this.currentDate;
+        }
+
+        this.hours = Math.round(Math.abs(this.currentDate - this.savedDate) / 36e5);
+
+        if (this.hours < 10) {
+          this.smile = ':)';
+        }
+        if (this.hours >= 10) {
+          this.smile = ':o';
+        }
+        if (this.hours >= 20) {
+          this.smile = ':ooo';
+        }
+        if (this.hours >= 30) {
+          this.smile = '*-*';
+        }
+        if (this.hours >= 50) {
+          this.smile = '^^';
+        }
+        if (this.hours >= 70) {
+          this.smile = ':з';
+        }
+        if (this.hours >= 100) {
+          this.smile = ':ззз';
+          alert('Вже ' + this.hours + ' годин тримаєшся! Напиши мені промокод на цьомчик "буб100"');
+        }
+      }
+    }
+
+    Vue.createApp(App).mount('#app');
+  </script>
+</body>
+</html>
